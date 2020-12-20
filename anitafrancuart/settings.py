@@ -1,7 +1,7 @@
 import os
 import environ
 
-#import django_heroku
+import django_heroku
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 location = lambda x: os.path.join(os.path.dirname(os.path.realpath(__file__)), x)
