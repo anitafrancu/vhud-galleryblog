@@ -3,17 +3,17 @@ from .models import *
 from django import forms
 
 class AlbumAdmin(admin.ModelAdmin):
-    fields = ('title', 'description', 'thumbnail', 'tags', 'visibility', 'slug')
-    list_display = ('title', 'description', 'thumbnail', 'created', 'tags', 'visibility', 'slug')
+    fields = ('title', 'description', 'thumbnail', 'visibility', 'slug')
+    list_display = ('title', 'description', 'created', 'thumbnail', 'visibility', 'slug')
     list_filter = ('title', 'description', 'thumbnail', 'visibility', 'slug')
     prepopulated_fields = {'slug': ('title',)}
     ordering = ('visibility', 'created')
 
 class AlbumImageAdmin(admin.ModelAdmin):
 	
-    fields = ('album', 'name', 'image', 'thumbnail', 'alt', 'width', 'height', 'slug', 'price', 'availability', 'description')
-    list_display = ( 'name', 'image', 'thumbnail', 'get_album_title', 'created', 'slug', 'price', 'availability')
-    list_filter = ( 'name', 'thumbnail', 'album', 'alt', 'price', 'availability')
+    fields = ('album', 'name', 'image', 'alt', 'width', 'height', 'slug', 'price', 'availability', 'description')
+    list_display = ( 'name', 'image', 'get_album_title', 'created', 'slug', 'price', 'availability')
+    list_filter = ( 'name', 'album', 'alt', 'price', 'availability')
     readonly_fields = ('slug',)
 
     class CustomModelChoiceField(forms.ModelChoiceField):

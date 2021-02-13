@@ -1,7 +1,7 @@
 body {
-
+    padding-top: 56px;
     background: transparent;
-	background-image: none;
+	  background-image: none;
 }
 
 #snowVid {
@@ -41,9 +41,6 @@ body {
     -webkit-transition: .35s;
     -o-transition: .35s;
     transition: .35s;
-}
-
-.active {
 }
 
 .nav-menu ul {
@@ -180,9 +177,6 @@ ul.about-me-l {
 
 }
 
-.about-me-talk {
-}
-
 .counts .count-box i {
     position: absolute;
     top: 25px;
@@ -219,7 +213,7 @@ ul.about-me-l {
     max-width: 100%;
     height: auto;
     border-style: ridge;
-	border-color: #ffb30082; /* blue #0070ffe3 */
+	  border-color: #ffb30082; /* blue #0070ffe3 */
     border-image: url('wood-border.jpg') 30 round;
     border-width: 6px;
 }
@@ -228,16 +222,21 @@ ul.about-me-l {
     max-width: 100%;
     height: auto;
     border-style: ridge;
-	border-color: #ffb30082; /* blue #0070ffe3 */
+	  border-color: #ffb30082; /* blue #0070ffe3 */
     border-image: url('space-border.png') 30 round;
     border-width: 6px;
+}
+
+.aflogo {
+  max-width: 100%;
+  height: auto;
 }
 
 .img-fluid-gal-thumb {
     max-width: 50%;
     height: 100%;
     border-style: ridge;
-	border-color: #ffb30082; /* blue #0070ffe3 */
+	  border-color: #ffb30082; /* blue #0070ffe3 */
     border-image: url('space-border.png') 30 round;
     border-width: 6px;
 }
@@ -260,7 +259,21 @@ p.blog-body-text {
 p.album_p_desc {
 	font-family: 'Blinker', cursive;
 	font-size: 20px;
-	font-weight: 100;
+  font-weight: 100;
+
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all;
+  /* Instead use this non-standard one: */
+  word-break: break-word;
+
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
 }
 
 .about-me .content h3 {
@@ -279,13 +292,13 @@ p.album_p_desc {
     text-transform: uppercase;
     color: #aaaaaa;
     font-family: "Poppins", sans-serif;
-	text-align: left;
+	  text-align: left;
 }
 
 .section-title h2::after {
 
     content: "";
-    width: 120px;
+    width: 60px;
     height: 1px;
     display: inline-block;
     background: #3e77ff;
@@ -301,7 +314,7 @@ p.album_p_desc {
     text-transform: uppercase;
     font-family: "Poppins", sans-serif;
     color: #fff;
-	text-align: left;
+	  text-align: left;
 }
 
 .portfolio .portfolio-wrap {
@@ -354,7 +367,6 @@ p.album_p_desc {
     line-height: 1;
     display: inline-block;
     text-transform: none;
-    speak: none;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -518,11 +530,8 @@ p.album_p_desc {
 
 .portfolio .portfolio-wrap .portfolio-info h4.album-wrap-view {
   font-size: 20px;
-  color: #2200c4;
+  color: #737373;
   font-weight: 600;
-}
-
-h4.album-wrap-view {
 }
 
 .portfolio .portfolio-wrap .portfolio-info p {
@@ -590,10 +599,6 @@ section .container {
     text-transform: uppercase;
     font-family: "Poppins", sans-serif;
     color: #fff;
-}
-
-.gallery-container {
-
 }
 
 .info-box {
@@ -701,8 +706,16 @@ a {
 	width: 100%;
 }
 
-
-@media screen and (min-width: 320px) and (max-width: 640px) {
+@media screen and (min-width: 300px) and (max-width: 640px) {
+    #crypto-wallet-bit {
+      font-size: 12px;
+    }
+    #crypto-wallet-eth {
+      font-size: 12px;
+    }
+    div.home-container {
+      padding-left: 0;
+    }
     .portfolio .portfolio-wrap {
 	    flex-direction: column;	
     }
@@ -719,7 +732,7 @@ a {
 	 }
 	 .portfolio .portfolio-wrap .portfolio-info h4.album-wrap-view {
 		 margin-bottom: 25%;
-		 color: #ff4a96;
+		 color: #b9b9b9;
 	 }
 }
 
@@ -757,10 +770,12 @@ a {
 
 }
 
+.home-container {
+  padding-left: 60px;
+}
+
 .contact-z {
   color: #444444;
-  margin-bottom: ;
-  width: ;
   background: rgba(255, 255, 255, 0.08);
 }
 
@@ -799,7 +814,6 @@ a {
 .social-icons a{
   background-color:#ffffffb5;
   color:#818a91;
-  font-size: ;
   display:inline-block;
   line-height:44px;
   width:44px;
@@ -1030,9 +1044,11 @@ input[type=submit] {
     background-color: #ff0000;
 }
 
+/*
 .fa-instagram {
-    background-color: ;
+    background-color: red;
 }
+*/
 
 .fa-whatsapp {
     background-color: #25d366;
@@ -1130,7 +1146,7 @@ a:active {
           transform: rotate(40deg);
 }
 
-@media screen and (min-width: 320px) and (max-width: 640px) {
+@media screen and (min-width: 300px) and (max-width: 640px) {
     .venoframe {
        background-color: blue;
 	   flex-direction: column;

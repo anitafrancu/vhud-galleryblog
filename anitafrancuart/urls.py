@@ -15,8 +15,8 @@ from django.views.static import serve
 from django.conf.urls.static import static
 from django.conf import settings
 
-import djoser
-from djoser.urls import authtoken
+#import djoser
+#from djoser.urls import authtoken
 
 ### Admin ###
 
@@ -31,8 +31,8 @@ router.register(r'images', AlbumImageListView, basename='images')
 router.register(r'users', UsersView, basename='users')
 router.register(r'groups', GroupsView, basename='groups')
 
-albums_router = routers.NestedSimpleRouter(router, r'gallery', lookup='gallery')
-albums_router.register(r'images', AlbumImageView, basename='gallery-image')
+#albums_router = routers.NestedSimpleRouter(router, r'gallery', lookup='gallery')
+#albums_router.register(r'images', AlbumImageView, basename='gallery-image')
 
 ### Error Handling ###
 handler404 = PageView.handler404
@@ -58,9 +58,9 @@ urlpatterns = [
     url(r'^gallery/', include('gallery.urls', namespace='gallery')),
     url(r'^blog/', include('blog.urls', namespace='blog')),
 
-    url(r'^api/v1/', include(router.urls)),
-    url(r'^api/v1/', include(albums_router.urls)),
-    url(r'^api/v1/auth/', include(djoser.urls.authtoken)),
+    #url(r'^api/v1/', include(router.urls)),
+    #url(r'^api/v1/', include(albums_router.urls)),
+    #url(r'^api/v1/auth/', include(djoser.urls.authtoken)),
     url(r'^admin/', admin.site.urls, name='admin_page'),
 	#url(r'^static/(?P<path>.*)$', serve), re_path(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}),
     #url(r'^media/(?P<path>.*)$', serve), re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),	

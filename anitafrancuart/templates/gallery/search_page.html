@@ -58,6 +58,13 @@
 								Album: <a href='{{ object.get_absolute_url }}'>{{ object.title }}</a>
 							 </div>
 						   </div>
+
+					  {% elif class == 'AlbumImage' %}
+						   <div class='row' style="text-align: left; margin-left: 30px;">
+							 <div class='col-12'>
+								Image: <a href='{{ object.get_absolute_image_url }}'>{{ object.name }}</a>
+							 </div>
+						   </div>						   
 					  {% endif %}
 						
 				    {% endwith %}

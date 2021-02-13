@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 from django.utils import timezone
 from django.urls import reverse
 
-from taggit.managers import TaggableManager
+#from taggit.managers import TaggableManager
 from sorl.thumbnail import ImageField
 
 from django.contrib.postgres.search import SearchVectorField
@@ -70,7 +70,7 @@ class ClientMessage(models.Model):
         return self.name + "-" +  self.email	
 
 class Album(models.Model):
-    tags = TaggableManager(blank=True)
+    #tags = TaggableManager(blank=True)
     VISIBLE_CHOICES = (
         ('hidden', 'Hidden'),
         ('visible', 'Visible'),
@@ -106,8 +106,8 @@ class AlbumImage(models.Model):
 		('sold', 'Sold'),
     )
     name = models.CharField(max_length=60)
-    image = ProcessedImageField(upload_to='media', processors=[ResizeToFit(1280)], format='JPEG', options={'quality': 90})
-    thumbnail = ProcessedImageField(upload_to='media', processors=[ResizeToFit(300)], format='JPEG', options={'quality': 80}, null=True, blank=True)
+    image = ProcessedImageField(upload_to='media', processors=[ResizeToFit(1980)], format='JPEG', options={'quality': 90})
+    #thumbnail = ProcessedImageField(upload_to='media', processors=[ResizeToFit(300)], format='JPEG', options={'quality': 80}, null=True, blank=True)
     album = models.ForeignKey(Album, on_delete=models.PROTECT, blank=True, null=True)
     alt = models.CharField(max_length=255, default=uuid.uuid4)
     description = models.TextField(max_length=1024, blank=True, null=True)

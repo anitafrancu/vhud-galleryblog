@@ -26,8 +26,9 @@
 			  <p style="color: #fff; text-align: left">Published on {{ album.created }}</p>
 
 			  <hr>
-			  <!-- Album Preview Image -->
+			 
 			  <div style="display: inline-flex;">
+			  <!-- Album Preview Image>
 			  {% if album.thumbnail %}
 			  
 				  {% thumbnail album.thumbnail "x280" as albmimg %}
@@ -38,18 +39,17 @@
 				  <img src="" class="img-fluid-gal" alt="{{ album.title }}">
 		      {% endif %}
 			  
-			  <hr>
+			  <hr -->
 			  
 			  <!-- Album Description -->
 			  <div class="ablum-desc" style="text-align: left; padding: 15px; margin: 0; font-size: 28px;">
 			  {% if album.description %}
-			  <h4 style="color: #8ae4ff; font-family: Oleo Script;">Details: </h4>
+			  <h4 style="color: #8ae4ff; font-family: Oleo Script;">Description: </h4>
 			  <p class="album_p_desc">{{ album.description }}</p>
 			  {% else %}
 			  <h4 style="color: #8ae4ff; font-family: Oleo Script;">No details available</h4>
 			  {% endif %}
-			  <!--p style="font-family: Poppins, sans-serif;font-style: italic; color: #1ab1ec;">Description: </p-->
-			  <!--p style="margin: 0">{{ album.description|markdown }}</p-->
+
 			  </div>
  			 </div>
 			  
@@ -61,10 +61,18 @@
 			  {% for image in images %}
 				<div class="col-lg-6 col-md-6 portfolio-item filter-abstract">
 				  <div class="portfolio-wrap">
+				    <a href="{{ image.get_absolute_image_url }}" data-gall="portfolioGallery" class="venobox zld-mobico" title="{{ image.name}}">					
+					<div class="portfolio-info">
+					  <h4 class="album-wrap-view" style="">{{ image.name }}</h4>		  
+					  <div class="portfolio-links">
+
+					  </div>
+					</div>
+				   </a>
 				    {% thumbnail image.image "x400" as img %}
 					<img src="{{ img.url }}" class="img-fluid-gal" alt="">
                     {% endthumbnail %}					
-					<div class="portfolio-info">
+					<!--div class="portfolio-info">
 					  <h4>{{ image.name }}</h4>
 					  <div class="portfolio-links">				   
 						<a href="{{ image.get_absolute_image_url }}" data-gall="portfolioGallery" class="venobox zld-mobico" title="{{ image.name}}"><i class="fa fa-search-plus zld-mob-i"></i></a>
@@ -73,8 +81,9 @@
 						{% else %}
 						<div></div>
 						{% endif %}
+
 					  </div>
-					</div>
+					</div-->
 				  </div>
 				</div>
 			  {% endfor %}	
@@ -86,14 +95,15 @@
 			  
 				<hr>						
 				
-				<h2 style="font-weight: 700">Similar Albums</h2>
+				<a href="{% url "gallery:gallery_page" %}"><p><i class="fa fa-long-arrow-left" style="font-size: 1em;"></i> Back to gallery</p></a>
+				<!--h2 style="font-weight: 700">Similar Albums</h2>
 				{% for album in similar_albums %}
 					<p>
 						<a href="{{ album.get_absolute_url }}">{{ album.title }}</a>
 					</p>
 				{% empty %}
 					There are no similar albums yet.
-				{% endfor %}
+				{% endfor %} -->
 	   </div><!-- End Container -->
 	</section><!-- End Section --> 
        

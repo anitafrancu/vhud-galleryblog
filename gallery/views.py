@@ -21,7 +21,7 @@ from django.contrib.postgres.search import SearchVector, SearchQuery, SearchRank
 from django.contrib.postgres.search import TrigramSimilarity
 from django.contrib import messages
 
-from taggit.models import Tag
+#from taggit.models import Tag
 from django.db.models import Count, Q
 
 from rest_framework import status, viewsets, generics, permissions, renderers
@@ -38,11 +38,11 @@ from blog.models import Post
 
 def gallery_page(request, tag_slug=None):
     object_list = Album.visible.all()
-    tags = object_list.order_by('tags__name').values_list('tags__name', flat=True).distinct()
-    tag = None
-    if tag_slug:
-        tag = get_object_or_404(Tag, slug=tag_slug)
-        object_list = object_list.filter(tags__in=[tag])		
+    #tags = object_list.order_by('tags__name').values_list('tags__name', flat=True).distinct()
+    #tag = None
+    #if tag_slug:
+    #    tag = get_object_or_404(Tag, slug=tag_slug)
+    #    object_list = object_list.filter(tags__in=[tag])		
     paginator = Paginator(object_list, 4)
     page = request.GET.get('page')
     try:
@@ -51,7 +51,7 @@ def gallery_page(request, tag_slug=None):
         albums = paginator.page(1) # If page is not an integer, deliver first page.
     except EmptyPage:
         albums = paginator.page(paginator.num_pages) # If page is out of range (e.g.  9999), deliver last page of results.
-    return render(request, 'gallery/gallery.html', {'albums': albums, 'tag': tag, 'tags': tags})
+    return render(request, 'gallery/gallery.html', {'albums': albums})
 
 def gallery_detail(request, album):
     album = get_object_or_404(Album, slug=album,
@@ -60,12 +60,12 @@ def gallery_detail(request, album):
     images = AlbumImage.objects.filter(album=album.id)
 	
     # List of similar albums
-    post_tags_ids = album.tags.values_list('id', flat=True)
-    similar_albums = Album.visible.filter(tags__in=post_tags_ids) \
-        .exclude(id=album.id)
-    similar_albums = similar_albums.annotate(same_tags=Count('tags')) \
-                        .order_by('-same_tags', '-created')[:4]
-    return render(request, 'gallery/album_detail.html', {'album': album, 'images': images, 'similar_albums': similar_albums})
+    #post_tags_ids = album.tags.values_list('id', flat=True)
+    #similar_albums = Album.visible.filter(tags__in=post_tags_ids) \
+    #    .exclude(id=album.id)
+    #similar_albums = similar_albums.annotate(same_tags=Count('tags')) \
+    #                    .order_by('-same_tags', '-created')[:4]
+    return render(request, 'gallery/album_detail.html', {'album': album, 'images': images})
 
 def artwork_details(request, image_slug):
 
