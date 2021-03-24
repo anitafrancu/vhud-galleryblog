@@ -1036,10 +1036,6 @@ input[type=submit] {
     background-color: #3b5998;
 }
 
-.fa-twitter {
-    background-color: #1dcaff;
-}
-
 .fa-youtube-square {
     background-color: #ff0000;
 }
@@ -1047,6 +1043,10 @@ input[type=submit] {
 /*
 .fa-instagram {
     background-color: red;
+}
+
+.fa-twitter {
+    background-color: #1dcaff;
 }
 */
 
