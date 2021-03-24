@@ -845,6 +845,11 @@ a {
 {
   background-color:#3b5998
 }
+
+.social-icons a.twitter:hover
+{
+  background-color:#00acee
+}
 .social-icons a.mailto:hover
 {
   background-color:#007bb6
