@@ -136,7 +136,7 @@ class PageView():
                 subject = form.cleaned_data['subject']
                 from_email = form.cleaned_data['email']
                 contact_message = form.cleaned_data['message']
-                message = "Name: " +name + " |" + " Sender's Email: " +from_email + " |" + " Message: " +contact_message
+                message = "Subject: " +name + " |" + " Sender's Email: " +from_email + " |" + " Message: " +contact_message
                 try:
                     send_mail(subject, message, from_email, to_email_list)
                 except BadHeaderError:
