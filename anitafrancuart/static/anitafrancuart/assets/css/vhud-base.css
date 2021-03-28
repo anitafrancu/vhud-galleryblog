@@ -212,9 +212,9 @@ ul.about-me-l {
 .img-fluid-gal {
     max-width: 100%;
     height: auto;
-    border-style: ridge;
-	  border-color: #ffb30082; /* blue #0070ffe3 */
-    border-image: url('wood-border.jpg') 30 round;
+    /*border-style: ridge;
+    /*border-color: #ffb30082;  blue #0070ffe3 */
+    /*border-image: none;/* url('wood-border.jpg') 30 round;
     border-width: 6px;
 }
 
