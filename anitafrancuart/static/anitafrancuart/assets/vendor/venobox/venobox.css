@@ -41,8 +41,8 @@
     display: none;
     left: 0;
     z-index: 89;
-	padding-top: 10px;
-	font-family: 'Sacramento', cursive;
+    padding-top: 10px;
+    font-family: 'Jura', sans-serif;
     font-size: 24px;
 }
 .vbox-close{
