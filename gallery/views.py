@@ -129,7 +129,7 @@ class PageView():
             form = ContactForm()
         else:
             form = ContactForm(request.POST)
-            to_email_list = ['anita3333333@gmail.com', 'valeriu.hudea@gmail.com']
+            to_email_list = ['anita3333333@gmail.com']
             if form.is_valid():
                 form.save()			    
                 name = form.cleaned_data['name']
